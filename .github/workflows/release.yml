@@ -2,14 +2,8 @@ name: Build & Release
 
 on:
   push:
-    branches: [ "main" ]
-  workflow_dispatch:
-  
-permissions:
-  contents: write
-
-    tags:
-      - 'v*'
+    tags: - 'v*'
+    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -53,7 +47,7 @@ jobs:
           cp build/spiffs.bin                "spiffs-${VERSION}.bin"
 
       - name: Create Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v4
         with:
           generate_release_notes: true
           body: |
