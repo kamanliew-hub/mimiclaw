@@ -2,12 +2,14 @@ name: Build & Release
 
 on:
   push:
-          branches: [ "main" ]
+    branches: [ "main" ]
   workflow_dispatch:
   
 permissions:
   contents: write
 
+    tags:
+      - 'v*'
 jobs:
   build:
     runs-on: ubuntu-latest
