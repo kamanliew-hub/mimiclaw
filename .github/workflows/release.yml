@@ -48,7 +48,7 @@ jobs:
           cp build/spiffs.bin                "spiffs-${VERSION}.bin"
 
       - name: Create Release
-        uses: softprops/action-gh-release@v4
+        uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
           body: |
